@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="<%= data.Poster %>" alt="movie<%= data.Title %>">
+    <h1>
+        <%= data.Title %>
+    </h1>
+    <div>
+        <p>IMDB:
+            <span>
+                <%= data.Ratings[0].Value %>
+            </span>
+        </p>
+    </div>
+    <div>
+        <h4>
+            <%= data.Year %>
+        </h4>
+        <h4>
+            <%= data.Rated %>
+        </h4>
+    </div>
+    <div>
+        <h4>
+            <%= data.Released %>
+        </h4>
+        <h4>
+            <%= data.Runtime %>
+        </h4>
+    </div>
+    <div>
+        <h4>
+            <%= data.Genre %>
+        </h4>
+        <h4>
+            <%= data.Director %>
+        </h4>
+        <h4>
+            <%= data.Writer %>
+        </h4>
+        <h4>
+            <%= data.Actors %>
+        </h4>
+    </div>
+    <div>
+        <p>
+            <%= data.Plot %>
+        </p>
+        <small>
+            <%= data.Language %>
+        </small>
+    </div>
+    <button class="returnBtn">
+        Search other movies
+    </button>
+    <script>
+        const btn = document.querySelector('.returnBtn');
+        btn.addEventListener('click', () => {
+            window.location.href = "/";
+        })
+    </script>
+</body>
+
+</html>
