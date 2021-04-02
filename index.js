@@ -2,11 +2,13 @@ require('dotenv').config();
 const Hapi = require('@hapi/hapi');
 const path = require('path');
 const axios = require('axios');
+const PORT = process.env.PORT || 3000;
+
 const init = async () => {
 
     const server = Hapi.server({
-        port: 3000,
-        host: 'localhost',
+        port: PORT,
+        // host: 'localhost',
         routes: {
             files: {
                 relativeTo: path.join(__dirname, 'public'),
