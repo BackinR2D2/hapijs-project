@@ -34,6 +34,9 @@ const init = async () => {
             try {
                 const movieSearch = req.payload.movie;
                 const { data } = await axios.get(`http://www.omdbapi.com/?t=${movieSearch}&apikey=${process.env.API_KEY}`);
+                if (data.Response === 'False') {
+                    return res.file('error.html');
+                }
                 return res.view('name', { data });
             } catch (error) {
                 return res.file('error.html');
