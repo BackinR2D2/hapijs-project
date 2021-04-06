@@ -9,14 +9,14 @@
 </head>
 
 <body>
-    <img src="<%= data.Poster %>" alt="movie<%= data.Title %>">
+    <img src="<%= data.Poster %>" alt="<%= data.Title %>">
     <h1>
         <%= data.Title %>
     </h1>
     <div>
         <p>IMDB:
             <span>
-                <%= data.Ratings[0].Value %>
+                <%= data.Ratings[0] && data.Ratings[0].Value %>
             </span>
         </p>
     </div>
